@@ -9,9 +9,6 @@ function corHexadecial(){
 		}
 	}
 
-	echo '<pre>';
-	print_r($cor);
-
 	if(array_search(10, $cor) !== NULL){
 		$position = array_search(10, $cor);
 		$cor[$position] = 'A'; 
