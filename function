@@ -1,0 +1,51 @@
+function corHexadecial(){
+	$cor = array();
+	for($i=0;$i<=6;$i++){
+		$ping = rand(1,15);
+		if(in_array($ping, $cor)){
+			$i--;
+		}else{
+			$cor[] = $ping;
+		}
+	}
+
+	echo '<pre>';
+	print_r($cor);
+
+	if(array_search(10, $cor) !== NULL){
+		$position = array_search(10, $cor);
+		$cor[$position] = 'A'; 
+	}
+	if(array_search(11, $cor) !== NULL){
+		$position = array_search(11, $cor);
+		$cor[$position] = 'B'; 
+	}
+	 if(array_search(12, $cor) !== NULL){
+		$position = array_search(12, $cor);
+		$cor[$position] = 'C'; 
+	}
+	if(array_search(13, $cor) !== NULL){
+		$position = array_search(13, $cor);
+		$cor[$position] = 'D'; 
+	}
+	if(array_search(14, $cor) !== NULL){
+		$position = array_search(14, $cor);
+		$cor[$position] = 'E'; 
+	}
+	if(array_search(15, $cor) !== NULL){
+		$position = array_search(15, $cor);
+		$cor[$position] = 'F'; 
+	}
+	array_shift($cor);
+	$hexadecimal = '';
+	foreach ($cor as $hexa) {
+		$hexadecimal = $hexadecimal.$hexa;
+	}
+
+	$hexadecimal = "#".$hexadecimal;
+
+	return $hexadecimal;
+}
+
+
+?>
